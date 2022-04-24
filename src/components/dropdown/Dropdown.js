@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FcAbout } from 'react-icons/fc';
-import { FcRight } from 'react-icons/fc';
-import { FcTodoList } from 'react-icons/fc';
-import { FcPrevious } from 'react-icons/fc';
+import {
+  AiFillCaretRight,
+  AiFillCaretLeft,
+  AiOutlineDoubleRight,
+  AiOutlineSkin,
+  AiOutlineCoffee
+} from 'react-icons/ai';
 
 import { CSSTransition } from 'react-transition-group';
 
@@ -27,9 +30,9 @@ export default function Dropdown() {
         className='menu-item'
         onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
       >
-        <span className='link-icon'>{props.leftIcon}</span>
+        <span className='drop-icon'>{props.leftIcon}</span>
         {props.children}
-        <span className='icon-right'>{props.rightIcon}</span>
+        <span className='drop-icon-right'>{props.rightIcon}</span>
       </a>
     );
   }
@@ -47,20 +50,21 @@ export default function Dropdown() {
         onEnter={calcHeight}
       >
         <div className='menu'>
-          <DropDownItem>Item1</DropDownItem>
-          <DropDownItem leftIcon={<FcAbout />}>Item2</DropDownItem>
+          <DropDownItem leftIcon={<AiOutlineCoffee />}>Coffee</DropDownItem>
+          <DropDownItem leftIcon={<AiOutlineSkin />}>Clothes</DropDownItem>
           <DropDownItem
-            leftIcon={<FcTodoList />}
-            rightIcon={<FcRight />}
+            leftIcon={<AiOutlineDoubleRight />}
+            rightIcon={<AiFillCaretRight />}
             goToMenu='subMenu'
           >
-            Item3
-                  </DropDownItem>
-                  <DropDownItem
-            leftIcon="🦧"
-            rightIcon={<FcRight />}
-            goToMenu="extraMenu">
-            ExtraMenu
+            Sub-menu1
+          </DropDownItem>
+          <DropDownItem
+            leftIcon={<AiOutlineDoubleRight />}
+            rightIcon={<AiFillCaretRight />}
+            goToMenu='extraMenu'
+          >
+            Sub-menu2
           </DropDownItem>
         </div>
       </CSSTransition>
@@ -73,17 +77,17 @@ export default function Dropdown() {
         onEnter={calcHeight}
       >
         <div className='menu'>
-          <DropDownItem leftIcon={<FcPrevious />} goToMenu='main'>
-            <h2>subItem1</h2>
+          <DropDownItem leftIcon={<AiFillCaretLeft />} goToMenu='main'>
+            <h2>Go back</h2>
           </DropDownItem>
-          <DropDownItem>subItem2</DropDownItem>
-          <DropDownItem>subItem3</DropDownItem>
-          <DropDownItem>subItem3</DropDownItem>
-          <DropDownItem>subItem3</DropDownItem>
-          <DropDownItem>subItem3</DropDownItem>
-          <DropDownItem>subItem3</DropDownItem>
-          <DropDownItem>subItem3</DropDownItem>
-          <DropDownItem>subItem3</DropDownItem>
+          <DropDownItem>subItem1</DropDownItem>
+          <DropDownItem>subItem1</DropDownItem>
+          <DropDownItem>subItem1</DropDownItem>
+          <DropDownItem>subItem1</DropDownItem>
+          <DropDownItem>subItem1</DropDownItem>
+          <DropDownItem>subItem1</DropDownItem>
+          <DropDownItem>subItem1</DropDownItem>
+          <DropDownItem>subItem1</DropDownItem>
         </div>
       </CSSTransition>
       <CSSTransition
@@ -94,17 +98,17 @@ export default function Dropdown() {
         onEnter={calcHeight}
       >
         <div className='menu'>
-          <DropDownItem leftIcon={<FcPrevious />} goToMenu='main'>
-            <h2>subDrop2Item2</h2>
+          <DropDownItem leftIcon={<AiFillCaretLeft />} goToMenu='main'>
+            <h2>Go Back</h2>
           </DropDownItem>
           <DropDownItem>subItem2</DropDownItem>
-          <DropDownItem>subItem3</DropDownItem>
-          <DropDownItem>subItem3</DropDownItem>
-          <DropDownItem>subItem3</DropDownItem>
-          <DropDownItem>subItem3</DropDownItem>
-          <DropDownItem>subItem3</DropDownItem>
-          <DropDownItem>subItem3</DropDownItem>
-          <DropDownItem>subItem3</DropDownItem>
+          <DropDownItem>subItem2</DropDownItem>
+          <DropDownItem>subItem2</DropDownItem>
+          <DropDownItem>subItem2</DropDownItem>
+          <DropDownItem>subItem2</DropDownItem>
+          <DropDownItem>subItem2</DropDownItem>
+          <DropDownItem>subItem2</DropDownItem>
+          <DropDownItem>subItem2</DropDownItem>
         </div>
       </CSSTransition>
     </div>

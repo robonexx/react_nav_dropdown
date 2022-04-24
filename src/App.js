@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
-import './Nav.css';
+import './components/nav/Nav.css';
 import Dropdown from './components/dropdown/Dropdown';
 import Nav from './components/nav/Nav';
 import NavItem from './components/navItem/NavItem';
+import { AiFillCaretRight, AiFillMail,AiFillCaretDown } from "react-icons/ai";
+
+
 
 // nav
 /* function Nav(props) {
@@ -55,12 +58,14 @@ function App() {
   return (
     <div className='App'>
       <Nav>
-        <NavItem title='home' icon='&#128521;' url='/' />
-        <NavItem title='knowledge' icon='&#128540;' url='/knowledge' />
-        <NavItem title='blog' icon='&#128517;' url='/blog' />
+        <NavItem title='home' icon={<AiFillCaretRight/>} url='/' />
+        <NavItem title='dropdown' icon={<AiFillCaretDown />} url='/knowledge'>
+        <Dropdown></Dropdown>
+        </NavItem>
+        <NavItem title='blog' icon={<AiFillCaretRight/>} url='/blog' />
 
-        <NavItem title='contact' icon='&#11093;' url='/contact'>
-          <Dropdown></Dropdown>
+        <NavItem title='contact' icon={<AiFillMail/>} url='/contact'>
+          
         </NavItem>
       </Nav>
       <h1>REACT NAV with DROPDOWN</h1>
