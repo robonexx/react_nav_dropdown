@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
 import './App.css';
-import './components/nav/Nav.css';
 import Dropdown from './components/dropdown/Dropdown';
 import Nav from './components/nav/Nav';
 import NavItem from './components/navItem/NavItem';
-import { AiFillCaretRight, AiFillMail,AiFillCaretDown } from "react-icons/ai";
+import { AiFillCaretRight, AiFillMail, AiFillCaretDown } from "react-icons/ai";
+
+// styles
+import './components/nav/Nav.css'
 
 
 
